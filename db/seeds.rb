@@ -13,11 +13,21 @@ require 'unirest'
 # JSON.parse(found.raw_body)
 
 response = Unirest.get(
-  "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1&tags=vegetarian",
+  "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10&tags=vegetarian",
   headers: {
       "X-Mashape-Key" => "rNL1Zb0lVAmsh8ds5UuGMzh1RLWBp106F33jsnx9oGIFNU46Zn",
-      "Accept" => "application/json"},
-  parameters: {
-    :description => "vegeterian"
-  }.to_json
+      "Accept" => "application/json"}
 )
+
+parsed = JSON.parse(response.raw_body)
+
+parsed['recipes'].each do |recipe|
+  name = recipe['title']
+  ingredients = recipe['extendedIngredients'].map {|i| i['originalString']}
+  instructions = recipe['instructions']
+  time_to_prepare = recipe['preparationMinutes']
+  time_to_cook = recipe['cookingMinutes']
+  source_url = recipe['sourceUrl']
+
+  recipe = Recipe.create!(name: name, ingredients: ingredients, time_to_prepare: time_to_prepare, time_to_cook: time_to_cook, source_url: source_url)
+end

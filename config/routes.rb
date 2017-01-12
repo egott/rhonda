@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   root to: "home#show"
 
+  get 'bots/index', to: 'bots#index'
+
 end

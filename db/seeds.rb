@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'unirest'
+
+# recipes = Recipe.all
+#
+# found = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=200&tags=#{vegeterian}"
+# JSON.parse(found.raw_body)
+
+response = Unirest.get(
+  "X-Mashape-Key" => "rNL1Zb0lVAmsh8ds5UuGMzh1RLWBp106F33jsnx9oGIFNU46Zn",
+  "Accept" => "application/json"
+)

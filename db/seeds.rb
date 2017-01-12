@@ -13,7 +13,7 @@ require 'unirest'
 # JSON.parse(found.raw_body)
 
 response = Unirest.get(
-  "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10&tags=vegetarian",
+  "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1000&tags=vegetarian",
   headers: {
       "X-Mashape-Key" => "rNL1Zb0lVAmsh8ds5UuGMzh1RLWBp106F33jsnx9oGIFNU46Zn",
       "Accept" => "application/json"}

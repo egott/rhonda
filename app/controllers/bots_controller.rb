@@ -1,7 +1,7 @@
 class BotsController < ApplicationController
   def initialize
     $rhonda = ApiAiRuby::Client.new(
-    :client_access_token => "25dbfde06b834782a5940ec803cfa275"
+    :client_access_token => "21136391b2cd47d7bbf7e5f7813287dc"
     )
 
   end
@@ -10,7 +10,7 @@ class BotsController < ApplicationController
   end
 
   def create
-    response = $rhonda.text_request bot_params
+    response = $rhonda.text_request params[:user_input]
     render json:response
   end
 

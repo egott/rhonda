@@ -16,7 +16,7 @@ class BotsController < ApplicationController
 
   def get_recipe
       query = params[:result]
-      binding.pry
+      logger.info(query)
       render json: response
   end
 

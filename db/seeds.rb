@@ -7,21 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'unirest'
 
-# recipes = Recipe.all
-#
-# found = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=200&tags=#{vegeterian}"
-# JSON.parse(found.raw_body)
-
-response = Unirest.get(
-  "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1000&tags=vegetarian",
+vegetarian = Unirest.get(
+  "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=100&tags=vegetarian",
   headers: {
       "X-Mashape-Key" => "rNL1Zb0lVAmsh8ds5UuGMzh1RLWBp106F33jsnx9oGIFNU46Zn",
       "Accept" => "application/json"}
 )
 
-parsed = JSON.parse(response.raw_body)
+vegetarian = JSON.parse(response.raw_body)
 
-parsed['recipes'].each do |recipe|
+vegetarian['recipes'].each do |recipe|
   name = recipe['title']
   ingredients = recipe['extendedIngredients'].map {|i| i['originalString']}
   instructions = recipe['instructions']
@@ -31,3 +26,68 @@ parsed['recipes'].each do |recipe|
 
   recipe = Recipe.create!(name: name, ingredients: ingredients, time_to_prepare: time_to_prepare, time_to_cook: time_to_cook, source_url: source_url)
 end
+
+# response1 = Unirest.get(
+#   "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1000&tags=fish",
+#   headers: {
+#       "X-Mashape-Key" => "rNL1Zb0lVAmsh8ds5UuGMzh1RLWBp106F33jsnx9oGIFNU46Zn",
+#       "Accept" => "application/json"}
+# )
+#
+# parsed1 = JSON.parse(response.raw_body)
+#
+# parsed1['recipes'].each do |recipe|
+#   name = recipe['title']
+#   ingredients = recipe['extendedIngredients'].map {|i| i['originalString']}
+#   instructions = recipe['instructions']
+#   time_to_prepare = recipe['preparationMinutes']
+#   time_to_cook = recipe['cookingMinutes']
+#   source_url = recipe['sourceUrl']
+#
+#   recipe = Recipe.create!(name: name, ingredients: ingredients, time_to_prepare: time_to_prepare, time_to_cook: time_to_cook, source_url: source_url)
+# end
+#
+# response2 = Unirest.get(
+#   "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1000&tags=chicken",
+#   headers: {
+#       "X-Mashape-Key" => "rNL1Zb0lVAmsh8ds5UuGMzh1RLWBp106F33jsnx9oGIFNU46Zn",
+#       "Accept" => "application/json"}
+# )
+#
+# parsed2 = JSON.parse(response.raw_body)
+#
+# parsed2['recipes'].each do |recipe|
+#   name = recipe['title']
+#   ingredients = recipe['extendedIngredients'].map {|i| i['originalString']}
+#   instructions = recipe['instructions']
+#   time_to_prepare = recipe['preparationMinutes']
+#   time_to_cook = recipe['cookingMinutes']
+#   source_url = recipe['sourceUrl']
+#
+#   recipe = Recipe.create!(name: name, ingredients: ingredients, time_to_prepare: time_to_prepare, time_to_cook: time_to_cook, source_url: source_url)
+# end
+#
+# response1 = Unirest.get(
+#   "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1000&tags=salad",
+#   headers: {
+#       "X-Mashape-Key" => "rNL1Zb0lVAmsh8ds5UuGMzh1RLWBp106F33jsnx9oGIFNU46Zn",
+#       "Accept" => "application/json"}
+# )
+#
+# parsed1 = JSON.parse(response.raw_body)
+#
+# parsed1['recipes'].each do |recipe|
+#   name = recipe['title']
+#   ingredients = recipe['extendedIngredients'].map {|i| i['originalString']}
+#   instructions = recipe['instructions']
+#   time_to_prepare = recipe['preparationMinutes']
+#   time_to_cook = recipe['cookingMinutes']
+#   source_url = recipe['sourceUrl']
+#
+#   recipe = Recipe.create!(name: name, ingredients: ingredients, time_to_prepare: time_to_prepare, time_to_cook: time_to_cook, source_url: source_url)
+# end
+
+
+seed all healthy things
+get ingredients out of string
+get ingredient name out of string

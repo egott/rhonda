@@ -9,9 +9,19 @@ class BotsController < ApplicationController
   def index
   end
 
-  def create
+  def get_response
     response = $rhonda.text_request params[:user_input]
+    params[:user_input]
+
     render json:response
   end
+
+  def recipe
+    # binding.pry
+    # query = params[]
+    binding.pry
+    params[:response]
+  end
+
 
 end

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   root to: "home#show"
 
   get 'bots/index', to: 'bots#index'
-  post 'bots', to: 'bots#create'
+  post 'bots', to: 'bots#get_response'
+  post 'bots', to: 'bots#recipe'
+
 
 end

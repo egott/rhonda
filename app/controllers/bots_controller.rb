@@ -10,7 +10,7 @@ class BotsController < ApplicationController
 
   def get_response
     response = $rhonda.text_request params[:user_input]
-    render json:response
+    render json: response
   end
 
 

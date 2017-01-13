@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 gem 'react-rails'
-gem 'pry-debugger'
+
 gem 'pry-rails', :group => :development
 
 # Use postgresql as the database for Active Record

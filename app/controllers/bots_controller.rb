@@ -10,8 +10,9 @@ class BotsController < ApplicationController
 
   def get_response
     response = $rhonda.text_request params[:user_input]
-    logger.info(response)
-    render json: response
+    if response.metadata.webhookUsed == false
+      render json: response
+    end
   end
 
 

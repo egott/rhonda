@@ -1,29 +1,14 @@
 class HomesController < ApplicationController
   def show
     # # work in progress
-
-
-
-
-
     ###########################################################
     # create new event at a given time and date
     ###########################################################
     # current_time = Time.now
     # start_date = current_time.utc.iso8601
     #https://developers.google.com/schemas/formats/datetime-formatting
-
-
-    # current_time = '2016-01-14T13:15:03-08:00'
     start_date = '2017-01-13T01:15:03-08:00'
     end_date = '2017-01-13T23:15:03-08:00'
-
-    @list_events = {
-    'max_results' => 10,
-    'single_events' => true,
-    'order_by' => 'startTime',
-    'time_min' => Time.now.iso8601,
-    }
 
     @event = {
     'summary' => 'New Event Title',
@@ -48,29 +33,41 @@ class HomesController < ApplicationController
    ###########################################################
    # view all events
    ###########################################################
-  #  @events = client.execute(:api_method => service.events.list,
-  #                        :parameters => {'calendarId' => 'primary', 'sendNotifications' => true},
-  #                        :body => JSON.dump(@list_event),
-  #                        :headers => {'Content-Type' => 'application/json'})
-  #   puts @events.body
-    # @events.each do |event|
-    #   start = event.start.date || event.start.dateTime
-    #   puts "- #{event.summary} (#{start})"
-    # end
 
 
     calendars = client.execute(api_method: service.events.list,
                               :parameters => {'calendarId' => 'primary', 'sendNotifications' => true, timeMin: start_date, timeMax:end_date },
                               :headers => {'Content-Type' => 'application/json'}
-
-
                               )
+    free_time = []
+    previous_date = start_date.to_datetime.to_i
 
-
+  (start_date.to_datetime.to_i .. end_date.to_datetime.to_i).step(1.hour) do |date|
 
     calendars.data.items.each do |event|
-      p event.start.dateTime
+      if !(previous_date..date).overlaps?(event.start.dateTime.to_i .. event.end.dateTime.to_i)
+        free_time << Time.at(previous_date)
+        break
+      end
     end
+    previous_date = date
+  end
+  previous_hour = 3
+  num_of_groups = 0
+  group_of_hours = []
+  free_time.each do |free_time_formatted|
+    if (previous_hour+1) == free_time_formatted.hour
+      num_of_hours ++
+      group_of_hours[num_of_groups] << free_time_formatted
+    else
+      group_of_hours[num_of_groups] << num_of_hours
+      num_of_hours = 0
+      num_of_groups++
+    end
+    previous_hour = free_time_formatted.hour
+  end
+  p group_of_hours
+  p "**************************"
 
   end
 end

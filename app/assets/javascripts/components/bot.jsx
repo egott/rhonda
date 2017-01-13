@@ -13,7 +13,6 @@ class Bot extends React.Component {
       bot_response = response.result.fulfillment.speech
       console.log(bot_response)
       console.log(response)
-
     })
   }
   render() {

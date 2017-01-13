@@ -10,6 +10,7 @@ class BotsController < ApplicationController
 
   def get_response
     response = $rhonda.text_request params[:user_input]
+    logger.info(response)
     render json: response
   end
 
@@ -30,6 +31,7 @@ class BotsController < ApplicationController
             "data": "",
             "source": "Rhondatest"
           }
+        logger.info(response)
         render json: response
       else
         logger.info("it does not have the key :((((((((")

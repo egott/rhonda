@@ -16,10 +16,21 @@ class BotsController < ApplicationController
 
   def get_recipe
       query = params[:result]
-      # logger.info 'does this work????????????????'
-      # logger.info(query[:parameters]['recipe'])
       if query[:parameters].has_key?('recipe')
-        logger.info("it has the keyyyyyyyyyyyyyyyy")
+        recipe = Recipe.all.sample
+        name = recipe.name
+        ingredient = recipe.ingredient_name
+        instruction = recipe.instructions
+        time = recipe.time_to_cook + recipe.time_to_prepare
+        link = recipe.source_url
+        response =
+          {
+            "speech": "My suggestion would be #{name}, it takes #{time} minutes to cook. Instructions: #{instruction}. Find more information on #{link}",
+            "displayText": "My suggestion would be #{name}, it takes #{time} minutes to cook. Instructions: #{instruction}. Find more information on #{link}",
+            "data": "",
+            "source": "Rhondatest"
+          }
+        render json: response
       else
         logger.info("it does not have the key :((((((((")
       end

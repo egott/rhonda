@@ -13,14 +13,10 @@ class BotsController < ApplicationController
   #   render json:response
   # end
 
-  def facebook
-    response =
-      {
-        "speech": "hello sup",
-        "displayText": "hello sup",
-        "data": "",
-        "source": "Chatbottest"
-      }
+
+  def get_recipe
+      query = params[:result]
+      binding.pry
       render json: response
   end
 

@@ -19,7 +19,7 @@ class BotsController < ApplicationController
         "speech": "hello sup",
         "displayText": "hello sup",
         "data": "",
-        "source", "Chatbottest"
+        "source": "Chatbottest"
       }
       render json: response
   end

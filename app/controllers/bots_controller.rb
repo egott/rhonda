@@ -19,7 +19,7 @@ class BotsController < ApplicationController
       # logger.info 'does this work????????????????'
       # logger.info(query[:parameters]['recipe'])
       binding.pry
-      if (query[:parameters]).has_key?(['recipe')
+      if query[:parameters].has_key?('recipe')
         logger.info("it has the keyyyyyyyyyyyyyyyy")
       else
         logger.info("it does not have the key :((((((((")

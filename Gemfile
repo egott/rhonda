@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem "omniauth-google-oauth2"
-gem "chronic"
+# gem "chronic"
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
 gem 'google_calendar'
 

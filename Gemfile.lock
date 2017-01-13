@@ -55,7 +55,6 @@ GEM
       execjs (~> 2.0)
     builder (3.2.2)
     byebug (9.0.6)
-    chronic (0.10.2)
     coderay (1.1.1)
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
@@ -273,7 +272,6 @@ PLATFORMS
 DEPENDENCIES
   api-ai-ruby
   byebug
-  chronic
   faker
   google-api-client (= 0.8.2)
   google_calendar

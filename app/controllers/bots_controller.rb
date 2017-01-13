@@ -17,7 +17,7 @@ class BotsController < ApplicationController
   def get_recipe
       query = params[:result]
       logger.info 'does this work????????????????'
-      logger.info(query[:parameters])
+      logger.info(query[:parameters]['recipe'])
       logger.info('it does!!!!!!!!!!!!!!!!!!!')
   end
 

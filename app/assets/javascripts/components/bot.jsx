@@ -4,7 +4,7 @@ class Bot extends React.Component {
     const form_input = this.refs.textBox.value
     $.ajax({
       type: "POST",
-      url: "http://hello-rhonda.com/bots",
+      url: "/bots",
       data: {
         user_input: form_input
       }

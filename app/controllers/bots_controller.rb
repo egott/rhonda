@@ -18,7 +18,7 @@ class BotsController < ApplicationController
       query = params[:result]
       # logger.info 'does this work????????????????'
       # logger.info(query[:parameters]['recipe'])
-      query[:parameters]['hello']
+      logger.info(query[:parameters]['recipe'])
 
 
 end

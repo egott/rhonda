@@ -5,9 +5,17 @@
     <%= csrf_meta_tags %>
 
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
 
   </head>
 
@@ -21,8 +29,22 @@
         <% end %>
       </div>
       <div>
-        <%= react_component "Bot" %>
-      <%= yield %>
+
+        <%= yield %>
+        <div class="chat">
+              <div class="chat-history">
+                <ul class="chat-ul">
+                  <li> <h2>Welcome to your personal assistant Rhonda</h2></li>
+                  <li>
+
+                    <%= react_component "BotPage" %>
+
+                  </li>
+                  <li class="clearfix">
+
+                </ul>
+          </div>
+        </div>
       </div>
-    </body>
+  </body>
 </html>

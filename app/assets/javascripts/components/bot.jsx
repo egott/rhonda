@@ -1,6 +1,5 @@
 class Bot extends React.Component {
   handleClick() {
-
     const form_input = this.refs.textBox.value
     $.ajax({
       type: "POST",
@@ -10,13 +9,12 @@ class Bot extends React.Component {
       }
     })
     .done(function(response){
-      bot_response = response.result.fulfillment.speech
-      console.log(bot_response)
-      console.log(response)
-    })
+      bot_response = response.speech
+      this.props.onNewRespond(bot_response)
+      this.props.onNewQuestion(form_input)
+    }.bind(this))
   }
   render() {
-    let bot_response = ""
     return(
       <div>
         <div className="container">
@@ -26,7 +24,6 @@ class Bot extends React.Component {
           <div id="spokenResponse" className="spoken-response">
           <div className="spoken-response__text"></div>
           </div>
-          <p> {bot_response} </p>
         </div>
       </div>
       )

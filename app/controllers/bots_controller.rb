@@ -9,10 +9,12 @@ class BotsController < ApplicationController
   end
 
   def get_response
-    response = $rhonda.text_request params[:user_input]
-    if response.metadata.webhookUsed == false
+    response = $rhonda.text_request params["recipe"]
+    # see if the other response has a metadata of webhookused true
+    if response[:result][:metadata][:webhookUsed] == "false"
       render json: response
     end
+
   end
 
 

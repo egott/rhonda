@@ -41,9 +41,10 @@ class HomesController < ApplicationController
                               )
     free_time = []
     previous_date = start_date.to_datetime.to_i
-
+#loop through all 24 hours of day and check  whether each hour overlaps with a event
+#if they overlap then that time is not free
   (start_date.to_datetime.to_i .. end_date.to_datetime.to_i).step(1.hour) do |date|
-
+    #loop through all the events for the day
     calendars.data.items.each do |event|
       if !(previous_date..date).overlaps?(event.start.dateTime.to_i .. event.end.dateTime.to_i)
         free_time << Time.at(previous_date)
@@ -52,21 +53,34 @@ class HomesController < ApplicationController
     end
     previous_date = date
   end
+
+  num_of_hours = 0
   previous_hour = 3
-  num_of_groups = 0
   group_of_hours = []
+  final_group_of_hours = []
+#formatting the available free time.
+#looping through free time to chunk them together
   free_time.each do |free_time_formatted|
-    if (previous_hour+1) == free_time_formatted.hour
-      num_of_hours ++
-      group_of_hours[num_of_groups] << free_time_formatted
+    if ((previous_hour+1) == (free_time_formatted.hour))
+      num_of_hours += 1
+      group_of_hours << free_time_formatted.hour
     else
-      group_of_hours[num_of_groups] << num_of_hours
+      group_of_hours << num_of_hours
+      final_group_of_hours << group_of_hours
       num_of_hours = 0
-      num_of_groups++
+      group_of_hours = []
     end
     previous_hour = free_time_formatted.hour
   end
-  p group_of_hours
+  last_arr = []
+  final_group_of_hours.each do |groups|
+    freetime = {
+      hours_available: groups.last,
+      hour_start: groups.first
+    }
+  last_arr << freetime
+  end
+  p last_arr
   p "**************************"
 
   end

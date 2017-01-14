@@ -10,7 +10,6 @@ class Bot extends React.Component {
       }
     })
     .done(function(response){
-      debugger
       bot_response = response.result.fulfillment.speech
       console.log(bot_response)
       console.log(response)

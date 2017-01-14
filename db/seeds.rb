@@ -126,6 +126,6 @@ parsed5['recipes'].each do |recipe|
   recipe = Recipe.create!(name: name, ingredients: ingredients, time_to_prepare: time_to_prepare, time_to_cook: time_to_cook, source_url: source_url, instructions: instructions, ingredient_name: ingredient_name)
 end
 
-10.times do {
-  Run.create!(duration: rand(10..120), calories: rand(1..900), fun_fact_about_calories: Faker::ChuckNorris.fact, distance: rand(4..60))
-}
+10.times do
+   Run.create!(duration: rand(10..120), calories: rand(1..900), fun_fact_about_calories: Faker::ChuckNorris.fact, distance: rand(4..60))
+end

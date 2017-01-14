@@ -67,8 +67,11 @@ module BotControllerHelper2
       }
       last_arr << freetime
     end
-    p last_arr
-    p "**************************"
+    last_arr.each do |list_times|
+      stringsoffreetime = "\n\n You have #{list_times[:hours_available]} hours that are free starting at #{list_times[:hour_start]}"
+      totalstring = totalstring + stringsoffreetime
+    end
+    ["Here are your free times for today: #{totalstring}"]
   end
 
   def insert_event

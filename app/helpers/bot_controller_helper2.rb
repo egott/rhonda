@@ -14,8 +14,9 @@ module BotControllerHelper2
 
   def get_freetime
     # start_date = current_time.utc.iso8601
-    start_date = Time.now
-    end_date = Time.now + 1
+    Time.zone = 'EST'
+    start_date = Time.now.iso8601
+    end_date = (Time.now + 1.day).iso8601
 
     client = Google::APIClient.new
     client.authorization.access_token = current_user.oauth_token
@@ -25,6 +26,7 @@ module BotControllerHelper2
                               :parameters => {'calendarId' => 'primary', 'sendNotifications' => true, timeMin: start_date, timeMax:end_date },
                               :headers => {'Content-Type' => 'application/json'}
                               )
+
     free_time = []
     previous_date = start_date.to_datetime.to_i
     #loop through all 24 hours of day and check  whether each hour overlaps with a event
@@ -32,21 +34,22 @@ module BotControllerHelper2
     (start_date.to_datetime.to_i .. end_date.to_datetime.to_i).step(1.hour) do |date|
       #loop through all the events for the day
       calendars.data.items.each do |event|
-        if !(previous_date..date).overlaps?(event.start.dateTime.to_i .. event.end.dateTime.to_i)
+        if !(previous_date..(date+1.hour)).overlaps?(event.start.dateTime.to_i .. event.end.dateTime.to_i)
+      
           free_time << Time.at(previous_date)
           break
         end
       end
       previous_date = date
     end
-
+    p free_time
     num_of_hours = 0
-    previous_hour = 3
+    previous_hour = Time.now.hour - 1
     group_of_hours = []
     final_group_of_hours = []
     #formatting the available free time.
     #looping through free time to chunk them together
-    free_time.each do |free_time_formatted|
+    free_time[1..-1].each do |free_time_formatted|
       if ((previous_hour+1) == (free_time_formatted.hour))
         num_of_hours += 1
         group_of_hours << free_time_formatted.hour
@@ -67,16 +70,19 @@ module BotControllerHelper2
       }
       last_arr << freetime
     end
+    p last_arr
+    totalstring = ""
     last_arr.each do |list_times|
-      stringsoffreetime = "\n\n You have #{list_times[:hours_available]} hours that are free starting at #{list_times[:hour_start]}"
+      stringsoffreetime = "You have #{list_times[:hours_available]} hours that are free starting at #{list_times[:hour_start]}--"
       totalstring = totalstring + stringsoffreetime
     end
-    ["Here are your free times for today: #{totalstring}"]
+    p totalstring
+    "Here are your free times for today: #{totalstring}"
   end
 
   def insert_event
-    start_date = Time.now
-    end_date = Time.now + 1
+    start_date = Time.now.utc.iso8601
+    end_date = (Time.now + 1.day).utc.iso8601
 
     @event = {
     'summary' => 'New Event Title',

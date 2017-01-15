@@ -6,7 +6,7 @@ class IndexIntroHeader extends React.Component {
           <div className="row">
             <div className="col-lg-12">
               <div className="intro-message">
-                <h1>Hello, Rhonda</h1>
+                <h1>Help Me, Rhonda</h1>
                 <h3>your own virtual personal assistant</h3>
                 <hr className="intro-divider"/>
                 <ul className="list-inline intro-social-buttons">

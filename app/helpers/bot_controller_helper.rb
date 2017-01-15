@@ -1,6 +1,9 @@
 module BotControllerHelper
-  def get_recipe
-    recipe = Recipe.all.sample
+  def get_recipe(ingredient)
+    recipes = Recipe.all
+
+    recipes = recipes.select { |recipe| recipe.ingredient_name.include? ingredient}
+    recipe = recipes.sample
     name = recipe.name
     ingredient = recipe.ingredient_name
     instruction = recipe.instructions

@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
 
   root to: "home#show"
-  get 'bots/index', to: 'bots#index'
-  post 'bots', to: 'bots#get_response'
+  get 'bot/index', to: 'bot#index'
+  post 'bot', to: 'bot#get_response'
+  
 
 
 

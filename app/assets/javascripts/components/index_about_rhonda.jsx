@@ -12,7 +12,7 @@ class IndexAboutRhonda extends React.Component {
                         <p className="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
                     </div>
                     <div className="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img className="img-responsive" src="img/ipad.png" alt=""/>
+                        <img className="img-responsive" src="" alt=""/>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@ class IndexAboutRhonda extends React.Component {
                         <p className="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
                     </div>
                     <div className="col-lg-5 col-sm-pull-6  col-sm-6">
-                        <img className="img-responsive" src="img/dog.png" alt=""/>
+                        <img className="img-responsive" src="" alt=""/>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@ class IndexAboutRhonda extends React.Component {
                         <p className="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
                     </div>
                     <div className="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img className="img-responsive" src="img/phones.png" alt=""/>
+                        <img className="img-responsive" src="" alt=""/>
                     </div>
                 </div>
             </div>

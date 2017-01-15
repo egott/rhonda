@@ -69,6 +69,8 @@ GEM
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
+    eventfulapi (2.2.1)
+      mime-types (> 0.0.0)
     execjs (2.7.0)
     extlib (0.9.16)
     faker (1.7.1)
@@ -279,6 +281,7 @@ DEPENDENCIES
   api-ai-ruby
   bootstrap-sass
   byebug
+  eventfulapi
   faker
   google-api-client (= 0.8.2)
   google_calendar

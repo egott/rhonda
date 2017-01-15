@@ -1,0 +1,3 @@
+class Run < ApplicationRecord
+
+end

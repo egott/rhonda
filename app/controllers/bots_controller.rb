@@ -1,5 +1,7 @@
 class BotsController < ApplicationController
   include BotControllerHelper
+  include BotController3Helper
+
   def initialize
     $rhonda = ApiAiRuby::Client.new(
     :client_access_token => "21136391b2cd47d7bbf7e5f7813287dc"
@@ -11,7 +13,7 @@ class BotsController < ApplicationController
 
   def get_response
     response = $rhonda.text_request params["user_input"]
-    debugger
+    # debugger
     if response[:result][:action] == "getRecipe"
       response =
               {
@@ -22,6 +24,10 @@ class BotsController < ApplicationController
           {
             "speech": "#{get_recipe.sample}"
           }
+    elsif response[:result][:action] == "getSports"
+      response = {
+        "speech": "#{get_run.sample}"
+      }
     else
         response = response[:result][:fulfillment]
     end

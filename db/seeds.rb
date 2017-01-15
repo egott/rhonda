@@ -1,5 +1,3 @@
-require 'unirest'
-
 response = Unirest.get(
   "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1000&tags=vegetarian",
   headers: {
@@ -129,13 +127,3 @@ end
 10.times do
    Run.create!(duration: rand(10..120), calories: rand(1..900), fun_fact_about_calories: Faker::ChuckNorris.fact, distance: rand(4..60))
 end
-
- # eventful = Eventful::API.new 'WZZ294GGCHG2rfjW'
- # results = eventful.call 'events/search',
- #                         :keywords => 'music',
- #                         :location => 'New York City',
- #                         :page_size => 5
-
-# results.first[1]['event'][0]['description']
-# results.first[1]['event'][0]['title']
-# ['start time']

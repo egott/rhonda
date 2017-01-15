@@ -25,6 +25,7 @@ class BotPage extends React.Component{
   render() {
     return(
       <div>
+      <p>adfasdf</p>
         {this.state.answer.map( (answer, i) =>
           <div>
             <div>

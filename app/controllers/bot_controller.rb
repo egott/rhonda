@@ -48,7 +48,6 @@ class BotController < ApplicationController
         }
 
     elsif response[:result][:action] == "getAPIevent"
-      # binding.pry
       $api_event_subject = response[:result][:parameters][:'APIevent-subject']
       $api_event_location = response[:result][:parameters][:'api_event_location']
 
@@ -65,8 +64,14 @@ class BotController < ApplicationController
         'speech': "#{set_eventfull}"
       }
     elsif response[:result][:action] == 'getGiph'
+      $subject = response[:result][:parameters][:giphSubject]
+      # debugger;
       response = {
-        'speech': "#{get_giph}"
+        'speech': "#{get_giph($subject)}"
+      }
+    elsif response[:result][:action] == "nextGiph"
+      response = {
+        'speech': "#{get_giph($subject)}"
       }
     else
         response = response[:result][:fulfillment]

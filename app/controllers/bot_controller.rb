@@ -31,6 +31,12 @@ class BotController < ApplicationController
           {
             "speech": "#{get_freetime}"
           }
+    elsif response[:result][:action] == "getTv"
+      $show = response[:result][:parameters][:show]
+      response =
+          {
+            "speech": "#{get_tv($show)}"
+          }
 
     elsif response[:result][:action] == "setEvent"
       title = response[:result][:parameters][:eventtitle]

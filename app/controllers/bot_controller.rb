@@ -16,12 +16,14 @@ class BotController < ApplicationController
       $ingredient = response[:result][:parameters][:food]
       response =
               {
-                "speech": "#{get_recipe($ingredient).sample}"
+                "speech": "#{get_recipe($ingredient).sample}",
+                "url": $recipe_link.to_s
               }
     elsif response[:result][:action] == "nextRecipe"
       response =
           {
-            "speech": "#{get_recipe($ingredient).sample}"
+            "speech": "#{get_recipe($ingredient).sample}",
+            "url": $recipe_link.to_s
           }
 
     elsif response[:result][:action] == "getFreetime"
@@ -52,12 +54,14 @@ class BotController < ApplicationController
       $api_event_location = response[:result][:parameters][:'api_event_location']
 
       response = {
-        'speech': "#{get_event($api_event_subject, $api_event_location).sample}"
+        'speech': "#{get_event($api_event_subject, $api_event_location).sample}",
+        'url': $event['venue_url']
       }
 
     elsif response[:result][:action] == "nextEvent"
       response = {
-        'speech': "#{get_event($api_event_subject, $api_event_location).sample}"
+        'speech': "#{get_event($api_event_subject, $api_event_location).sample}",
+        'url': $event['venue_url']
       }
     elsif response[:result][:action] == 'setEventfulEvent'
       response = {
@@ -72,6 +76,19 @@ class BotController < ApplicationController
     elsif response[:result][:action] == "nextGiph"
       response = {
         'speech': "#{get_giph($subject)}"
+      }
+    elsif response[:result][:action] == 'getRun'
+      response = {
+        'speech': "#{get_run.sample}"
+      }
+    elsif response[:result][:action] == 'nextRun'
+      response = {
+        'speech': "#{next_run.sample}"
+      }
+    elsif response[:result][:action] == 'setRun'
+      time = response[:result][:parameters][:time]
+      response = {
+        'speech': "#{set_run(time)}"
       }
     else
         response = response[:result][:fulfillment]

@@ -3,18 +3,24 @@ class BotPage extends React.Component{
     super()
     this.state = {
       answer: [],
-      reply: []
+      reply: [],
+      link: [],
+      gif: []
         }
       }
   componentDidMount() {
     this.setState({
       answer: ["Hello, my name is Rhonda. What can I help you with today?"].concat(this.state.answer),
-      reply: ["This is where your answers will be displayed, if an option is not availlable, Rhonda will send you in the right direction."].concat(this.state.reply)
+      reply: ["This is where your answers will be displayed, if an option is not availlable, Rhonda will send you in the right direction."].concat(this.state.reply),
+      link: [""].concat(this.state.link),
+      gif: [""].concat(this.state.gif)
     })
   }
-  newRespond(answer){
+  newRespond(answer,link){
     this.setState({
-      answer: (this.state.answer).concat([answer])
+      answer: (this.state.answer).concat([answer]),
+      link: (this.state.link).concat([link]),
+      gif: (this.state.gif).concat([gif])
     })
   }
   newQuestion(question){
@@ -30,7 +36,7 @@ class BotPage extends React.Component{
             <div>
               <Question reply={this.state.reply[i]} key={i+100}/>
               <br/><br/><br/><br/>
-              <Answer answer={this.state.answer[i]} key={i}/>
+              <Answer answer={this.state.answer[i]} link={this.state.link[i]} key={i}/>
             </div>
           </div>
         )}

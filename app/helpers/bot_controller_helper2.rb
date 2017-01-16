@@ -4,7 +4,7 @@ module BotControllerHelper2
     # start_date = current_time.utc.iso8601
     Time.zone = 'EST'
     start_date = Time.now.iso8601
-    end_date = (Time.now + 1.day).iso8601
+    end_date = (Time.now.end_of_day).iso8601
 
     client = Google::APIClient.new
     client.authorization.access_token = current_user.oauth_token
@@ -16,14 +16,23 @@ module BotControllerHelper2
                               )
 
     free_time = calculate_freetime(calendars)
-    p free_time
+
     last_arr = group_open_times(free_time)
+
+    $last_arr = last_arr
     totalstring = ""
-    last_arr.each do |list_times|
-      stringsoffreetime = "You have #{list_times[:hours_available]} hours that are free starting at #{list_times[:hour_start]}--"
+
+    last_arr[0..-2].each do |list_times|
+
+      if list_times[:hour_start] > 12
+        list_times[:hour_start] = "#{list_times[:hour_start]- 12} pm"
+      elsif
+        list_times[:hour_start] = "#{list_times[:hour_start]} am"
+      end
+      stringsoffreetime = "You have #{list_times[:hours_available]} hours of free time today starting at #{list_times[:hour_start]} untill #{list_times[:hour_start][-4..-1].to_i + list_times[:hours_available]} #{list_times[:hour_start][-2..-1]}. "
       totalstring = totalstring + stringsoffreetime
     end
-    p totalstring
+
     "Here are your free times for today: #{totalstring}"
   end
 
@@ -54,7 +63,7 @@ module BotControllerHelper2
   def calculate_freetime(calendar_events)
     Time.zone = 'EST'
     start_date = Time.now.iso8601
-    end_date = (Time.now + 1.day).iso8601
+    end_date = (Time.now.end_of_day + 1.hour).iso8601
     free_time = []
     all_day_free = []
     num = 0
@@ -81,6 +90,7 @@ module BotControllerHelper2
     if free_time.empty?
       return all_day_free
     else
+
       return free_time
     end
   end
@@ -118,6 +128,7 @@ module BotControllerHelper2
       last_arr << freetime
     end
     return last_arr
+
   end
 
 

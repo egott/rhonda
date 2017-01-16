@@ -72,11 +72,11 @@ class BotController < ApplicationController
       response = {
         'speech': "#{get_event($api_event_subject, $api_event_location).sample}"
       }
-<
+
     elsif response[:result][:action] == "nextEvent"
       response = {
         'speech': "#{get_event($api_event_subject, $api_event_location).sample}"
-
+      }
     elsif response[:result][:action] == 'setEventfulEvent'
       response = {
         'speech': "#{set_eventfull}"

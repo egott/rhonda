@@ -46,21 +46,23 @@ class BotController < ApplicationController
       day = response[:result][:parameters][:eventstart]
       starttime = response[:result][:parameters][:eventtime].join.split[0..1]
       endtime = response[:result][:parameters][:eventtime].join.split[-2..-1]
-  
+
 
       response = {
         "speech": "#{set_event(title, location, day, starttime, endtime)}"
         }
 
     elsif response[:result][:action] == "getAPIevent"
-      # binding.pry
-      api_event_subject = response[:result][:parameters][:'APIevent-subject']
-      api_event_location = response[:result][:parameters][:'api_event_location']
+      $api_event_subject = response[:result][:parameters][:'APIevent-subject']
+      $api_event_location = response[:result][:parameters][:'api_event_location']
 
       response = {
-        'speech': "#{get_event(api_event_subject, api_event_location).sample}"
+        'speech': "#{get_event($api_event_subject, $api_event_location).sample}"
       }
-
+    elsif response[:result][:action] == 'setEventfulEvent'
+      response = {
+        'speech': "#{set_eventfull}"
+      }
     else
         response = response[:result][:fulfillment]
     end

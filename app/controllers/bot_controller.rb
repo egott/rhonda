@@ -1,7 +1,7 @@
 class BotController < ApplicationController
   include BotControllerHelper
   include BotControllerHelper2
-  include BotController3Helper
+
 
   def index
     $rhonda = ApiAiRuby::Client.new(
@@ -30,14 +30,25 @@ class BotController < ApplicationController
             "speech": "#{get_freetime}"
           }
 
-    elsif response[:result][:action] == "getSports"
+    elsif response[:result][:action] == "getRun"
       response = {
         "speech": "#{get_run.sample}"
       }
 
+    elsif response[:result][:action] == "nextRun"
+      response = {
+        "speech": "#{next_run.sample}"
+      }
+
+    elsif response[:result][:action] == "setRun"
+      start_time = response[:result][:parameters][:time]
+      response = {
+        "speech": "#{set_run(start_time)}"
+      }
+
     elsif response[:result][:action] == "setEvent"
       title = response[:result][:parameters][:eventtitle]
-      puts title
+
       if title == ""
         title = "event"
       end

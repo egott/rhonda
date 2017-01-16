@@ -1,7 +1,7 @@
 class BotController < ApplicationController
   include BotControllerHelper
   include BotControllerHelper2
-  include BotController3Helper
+
 
   def index
     $rhonda = ApiAiRuby::Client.new(

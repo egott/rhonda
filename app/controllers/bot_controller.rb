@@ -29,10 +29,6 @@ class BotController < ApplicationController
             "speech": "#{get_freetime}"
           }
 
-    elsif response[:result][:action] == "getSports"
-      response = {
-        "speech": "#{get_run.sample}"
-      }
 
     elsif response[:result][:action] == "setEvent"
       title = response[:result][:parameters][:eventtitle]

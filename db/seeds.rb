@@ -127,3 +127,6 @@ end
 10.times do
    Run.create!(duration: rand(10..120), calories: rand(1..900), fun_fact_about_calories: Faker::ChuckNorris.fact, distance: rand(4..60))
 end
+
+Recipe.where(:ingredient_name => nil).destroy_all
+Recipe.where(:time_to_cook => nil).destroy_all

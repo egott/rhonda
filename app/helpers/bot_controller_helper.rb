@@ -1,4 +1,6 @@
 module BotControllerHelper
+   require 'eventful/api'
+
   def get_recipe(ingredient)
     recipes = Recipe.all
 
@@ -19,10 +21,11 @@ module BotControllerHelper
     results = eventful.call 'events/search',
                             :keywords => subject,
                             :location => location,
-                            :page_size => 50
+                            :page_size => 5
     $event = results.first[1]['event'].sample
-    ["There is an event at #{$event['venue_name']}, on #{$event['start_time']}. For more information, click here #{$event['venue_url']}!",
-    "I found an awesome event at #{$event['venue_name']}. The event is on #{$event['start_time'].iso8601}, go here to learn more about it! #{$event['venue_url']} 🤘"
+
+    ["There is an event at #{$event['venue_name']}, on #{$event['start_time'].strftime("%A %B %e, %Y at %l:%M %P")}. For more information, click here #{$event['venue_url']}!",
+    "I found an awesome event at #{$event['venue_name']}. The event is on #{$event['start_time'].strftime("%A %B %e, %Y at %l:%M %P")}, go here to learn more about it! #{$event['venue_url']} 🤘"
   ]
 
   end
@@ -30,7 +33,6 @@ module BotControllerHelper
   def set_event(title, location, day, starttime, endtime)
     start_date = Chronic.parse(day.to_s + " " + starttime.join.to_s).iso8601
     end_date = Chronic.parse(day.to_s + " " + endtime.join.to_s).iso8601
-
     @event = {
     'summary' => title,
     'location' => location,
@@ -88,14 +90,18 @@ module BotControllerHelper
     end
 
     runs = Run.where(duration: [0..(max_free_time * 60)])
-    $runs = runs.sort_by { |run| run.duration}
-    $run = $runs.pop
-    duration = $run.duration
-    calories = $run.calories
-    fun_fact = $run.fun_fact_about_calories
-    distance = $run.distance
+      if runs.length > 0
+        $runs = runs.sort_by { |run| run.duration}
+        $run = $runs.pop
+        duration = $run.duration
+        calories = $run.calories
+        fun_fact = $run.fun_fact_about_calories
+        distance = $run.distance
 
-    ["A great idea would be to run #{distance} miles for #{duration} minutes. You could burn #{calories} calories! If you do that, then #{fun_fact}", "Hmm, how about a #{distance} mile run that burns around #{calories} calories for #{duration} minutes!" ]
+        ["A great idea would be to run #{distance} miles for #{duration} minutes. You could burn #{calories} calories! If you do that, then #{fun_fact}", "Hmm, how about a #{distance} mile run that burns around #{calories} calories for #{duration} minutes!" ]
+      else
+        ["You don't have time for a run today ☹️"]
+      end
   end
 
   def next_run

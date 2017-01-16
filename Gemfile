@@ -46,6 +46,10 @@ gem "omniauth-google-oauth2"
 # gem "chronic"
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
 gem 'google_calendar'
+gem 'weather-api'
+gem 'marvel_api'
+gem 'tvdbr'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -14,6 +14,7 @@ module BotControllerHelper2
                               :parameters => {'calendarId' => 'primary', 'sendNotifications' => true, timeMin: start_date, timeMax:end_date },
                               :headers => {'Content-Type' => 'application/json'}
                               )
+    get_tv
     free_time = calculate_freetime(calendars)
     last_arr = group_open_times(free_time)
     $last_arr = last_arr
@@ -94,7 +95,28 @@ module BotControllerHelper2
     return last_arr
   end
 
+  def get_weather
+    response = Weather.lookup_by_location('New York, NY', Weather::Units::FAHRENHEIT)
+    p response
 
 
+  end
+
+  def get_marvel
+    @client = Marvel::Client.new
+    @client.configure do |config|
+      config.api_key = 'a87a5938193d3e9dccc0f1f713fee785'
+      config.private_key = '3e199647d1dc793120dc16a07e3c308ef2cfadb4'
+    end
+    response = @client.characters(nameStartsWith: 'sp', orderBy: 'modified')
+    p response
+  end
+
+  def get_tv(show)
+    total_episode = []
+    tvdb = Tvdbr::Client.new('BFEEF9792B1697DF')
+    episode = tvdb.find_all_series_by_title(show)
+    "#{episode[0].series_name}: #{episode[0].overview}."
+  end
 
 end

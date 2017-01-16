@@ -12,8 +12,10 @@ class Bot extends React.Component {
       bot_response = response.speech
       if ('url' in response == true) {
         link = response.url
+        gif = ""
       } else if ('gif' in response == true) {
         gif = response.gif
+        link = ""
       }
       else {
         link = "",

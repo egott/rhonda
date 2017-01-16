@@ -71,11 +71,11 @@ class BotController < ApplicationController
       $subject = response[:result][:parameters][:giphSubject]
       # debugger;
       response = {
-        'speech': "#{get_giph($subject)}"
+        'gif': "#{get_giph($subject)}"
       }
     elsif response[:result][:action] == "nextGiph"
       response = {
-        'speech': "#{get_giph($subject)}"
+        'gif': "#{get_giph($subject)}"
       }
     elsif response[:result][:action] == 'getRun'
       response = {

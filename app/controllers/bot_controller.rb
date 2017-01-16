@@ -1,6 +1,7 @@
 class BotController < ApplicationController
   include BotControllerHelper
   include BotControllerHelper2
+  include BotController3Helper
 
 
   def index
@@ -62,6 +63,10 @@ class BotController < ApplicationController
     elsif response[:result][:action] == 'setEventfulEvent'
       response = {
         'speech': "#{set_eventfull}"
+      }
+    elsif response[:result][:action] == 'getGiph'
+      response = {
+        'speech': "#{get_giph}"
       }
     else
         response = response[:result][:fulfillment]

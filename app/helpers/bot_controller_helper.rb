@@ -1,6 +1,7 @@
 module BotControllerHelper
    require 'eventful/api'
 
+
   def get_recipe(ingredient)
     recipes = Recipe.all
 
@@ -133,9 +134,8 @@ module BotControllerHelper
                           :headers => {'Content-Type' => 'application/json'})
 
     "I just set a #{$run.distance} miles run at in your Calendar from #{start_date} untill #{end_date}"
-
-
   end
+
 
 
 

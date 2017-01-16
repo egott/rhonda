@@ -64,10 +64,14 @@ class BotController < ApplicationController
         'speech': "#{set_eventfull}"
       }
     elsif response[:result][:action] == 'getGiph'
-      subject = response[:result][:parameters][:giphSubject]
+      $subject = response[:result][:parameters][:giphSubject]
       # debugger;
       response = {
-        'speech': "#{get_giph(subject)}"
+        'speech': "#{get_giph($subject)}"
+      }
+    elsif response[:result][:action] == "nextGiph"
+      response = {
+        'speech': "#{get_giph($subject)}"
       }
     else
         response = response[:result][:fulfillment]

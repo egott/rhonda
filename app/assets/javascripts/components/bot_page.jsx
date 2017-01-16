@@ -36,7 +36,7 @@ class BotPage extends React.Component{
             <div>
               <Question reply={this.state.reply[i]} key={i+100}/>
               <br/><br/><br/><br/>
-              <Answer answer={this.state.answer[i]} link={this.state.link[i]} key={i}/>
+              <Answer answer={this.state.answer[i]} link={this.state.link[i]} gif={this.state.gif[i]} key={i}/>
             </div>
           </div>
         )}

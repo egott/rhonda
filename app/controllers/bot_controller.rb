@@ -11,7 +11,6 @@ class BotController < ApplicationController
 
   def get_response
     response = $rhonda.text_request params["user_input"]
-
     if response[:result][:action] == "getRecipe"
       $ingredient = response[:result][:parameters][:food]
       response =
@@ -30,10 +29,12 @@ class BotController < ApplicationController
             "speech": "#{get_freetime}"
           }
 
+
     elsif response[:result][:action] == "getRun"
       response = {
         "speech": "#{get_run.sample}"
       }
+
 
     elsif response[:result][:action] == "nextRun"
       response = {
@@ -64,12 +65,18 @@ class BotController < ApplicationController
         }
 
     elsif response[:result][:action] == "getAPIevent"
+
       $api_event_subject = response[:result][:parameters][:'APIevent-subject']
       $api_event_location = response[:result][:parameters][:'api_event_location']
 
       response = {
         'speech': "#{get_event($api_event_subject, $api_event_location).sample}"
       }
+<
+    elsif response[:result][:action] == "nextEvent"
+      response = {
+        'speech': "#{get_event($api_event_subject, $api_event_location).sample}"
+
     elsif response[:result][:action] == 'setEventfulEvent'
       response = {
         'speech': "#{set_eventfull}"

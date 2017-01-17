@@ -29,3 +29,10 @@ module Rhonda
     end
   end
 end
+
+
+module MyApp
+  class Application < Rails::Application
+      config.autoload_paths += %W(#{config.root}/lib)
+  end
+end

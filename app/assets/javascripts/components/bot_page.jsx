@@ -17,7 +17,8 @@ class BotPage extends React.Component{
     })
 
   }
-  newRespond(answer,link){
+  newRespond(answer,link, giph){
+
     this.setState({
       answer: (this.state.answer).concat([answer]),
       link: (this.state.link).concat([link]),

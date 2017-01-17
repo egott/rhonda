@@ -14,20 +14,7 @@ class BotController < ApplicationController
     ai_response = $rhonda.text_request params["user_input"]
      response = Response.api_distr(ai_response)
 
-    # if response[:result][:action] == "getRecipe"
-    #   $ingredient = response[:result][:parameters][:food]
-    #   response =
-    #           {
-    #             "speech": "#{get_recipe($ingredient).sample}",
-    #             "url": $recipe_link.to_s
-    #           }
-    # elsif response[:result][:action] == "nextRecipe"
-    #   response =
-    #       {
-    #         "speech": "#{get_recipe($ingredient).sample}",
-    #         "url": $recipe_link.to_s
-    #       }
-    #
+
     # elsif response[:result][:action] == "getFreetime"
     #   response =
     #       {

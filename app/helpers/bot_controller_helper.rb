@@ -1,36 +1,7 @@
 module BotControllerHelper
-   require 'eventful/api'
 
 
-  # def get_recipe(ingredient)
-  #   recipes = Recipe.all
-  #
-  #   recipes = recipes.select { |recipe| recipe.ingredient_name.include? ingredient}
-  #   recipe = recipes.sample
-  #   name = recipe.name
-  #   ingredient = recipe.ingredient_name
-  #   instruction = recipe.instructions
-  #   time = recipe.time_to_cook.to_i + recipe.time_to_prepare.to_i
-  #   $recipe_link = recipe.source_url
-  #
-  #   ["My suggestion would be #{name}, it takes #{time} minutes to cook. Say next if you want another recipe.", "I found this great recipe: #{name}, if you have #{time} minutes to spare. Doesn't please you? just type next."]
-  # end
-
-  def get_event(subject, location)
-    eventful = Eventful::API.new 'WZZ294GGCHG2rfjW'
-    # debugger;
-    results = eventful.call 'events/search',
-                            :keywords => subject,
-                            :location => location,
-                            :page_size => 5
-    $event = results.first[1]['event'].sample
-
-    ["There is an event: #{$event['title']} at #{$event['venue_name']}, on #{$event['start_time'].strftime("%A %B %e, %Y at %l:%M %P")}.",
-    "I found an awesome event: #{$event['title']} at #{$event['venue_name']}. The event is on #{$event['start_time'].strftime("%A %B %e, %Y at %l:%M %P")} 🤘."
-  ]
-
-  end
-
+  
   def set_event(title, location, day, starttime, endtime)
     start_date = Chronic.parse(day.to_s + " " + starttime.join.to_s).iso8601
     end_date = Chronic.parse(day.to_s + " " + endtime.join.to_s).iso8601

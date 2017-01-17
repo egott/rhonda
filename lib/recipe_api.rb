@@ -1,5 +1,6 @@
 module RecipeApi
   extend self
+
   def get_recipe(ingredient)
     recipes = Recipe.all
 

@@ -36,6 +36,12 @@ class BotController < ApplicationController
           {
             "speech": "#{get_tv($show)}"
           }
+    elsif response[:result][:action] == 'setTv'
+      time = response[:result][:parameters][:time]
+      response =
+          {
+            'speech': "#{set_tv(time)}"
+          }
 
     elsif response[:result][:action] == "setEvent"
       title = response[:result][:parameters][:eventtitle]

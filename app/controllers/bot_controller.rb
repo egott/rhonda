@@ -1,7 +1,6 @@
 class BotController < ApplicationController
   include BotControllerHelper
   include BotControllerHelper2
-  include BotController3Helper
 
 
   def index
@@ -95,6 +94,16 @@ class BotController < ApplicationController
       time = response[:result][:parameters][:time]
       response = {
         'speech': "#{set_run(time)}"
+      }
+    elsif response[:result][:action] == 'getWeather'
+      location = response[:result][:parameters][:location]
+      response = {
+        'speech': "#{get_weather(location)}"
+      }
+    elsif response[:result][:action] == 'getMarvel'
+      character = response[:result][:parameters][:character]
+      response = {
+        'speech': "#{get_marvel(character)}"
       }
     else
         response = response[:result][:fulfillment]

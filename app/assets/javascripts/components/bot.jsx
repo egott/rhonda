@@ -9,6 +9,7 @@ class Bot extends React.Component {
       }
     })
     .done(function(response){
+      debugger
       bot_response = response.speech
       if ('url' in response == true) {
         link = response.url
@@ -29,7 +30,10 @@ class Bot extends React.Component {
     return(
       <div>
         <div className="container">
-          <input id="speech" type="text" ref= "textBox"/>
+          {/* <form onSubmit={this.handleSubmit.bind(this)}> */}
+            <input id="speech" type="text" ref= "textBox" placeholder="Start typing..."/>
+            {/* <input type="submit" /> */}
+          {/* </form> */}
           <br/><br/>
           <button id="rec" className="btn" onClick={this.handleClick.bind(this)}>Ask</button>
           <div id="spokenResponse" className="spoken-response">

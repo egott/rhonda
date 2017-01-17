@@ -14,7 +14,7 @@ module BotControllerHelper2
                               :parameters => {'calendarId' => 'primary', 'sendNotifications' => true, timeMin: start_date, timeMax:end_date },
                               :headers => {'Content-Type' => 'application/json'}
                               )
-    get_tv
+
     free_time = calculate_freetime(calendars)
     last_arr = group_open_times(free_time)
     $last_arr = last_arr
@@ -98,8 +98,6 @@ module BotControllerHelper2
   def get_weather
     response = Weather.lookup_by_location('New York, NY', Weather::Units::FAHRENHEIT)
     p response
-
-
   end
 
   def get_marvel

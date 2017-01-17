@@ -15,23 +15,19 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 }
 .chat .chat-history {
  padding: 30px 30px 20px;
- border-bottom: 2px solid white;
+
 }
 .chat .chat-history .message-data {
  margin-bottom: 15px;
-}
-.chat .chat-history .message-data-time {
- color: red;
- padding-left: 6px;
 }
 .chat .chat-history .message {
  color: white;
  padding: 18px 20px;
  line-height: 26px;
- font-size: 16px;
- border-radius: 5px;
+ font-size: 14px;
+ border-radius: 10px;
  margin-bottom: 30px;
- width: 90%;
+ width: 55%;
  position: relative;
 }
 .chat .chat-history .message:after {
@@ -39,23 +35,23 @@ content: "";
    position: absolute;
    top: -15px;
    left: 20px;
-   border-width: 0 15px 15px;
+   border-width: 0 20px 15px;
    border-style: solid;
-   border-color: #CCDBDC transparent;
+   border-color: #245269 transparent;
    display: block;
    width: 0;
 }
 .chat .chat-history .you-message {
- background: #CCDBDC;
- color:#003366;
+ background: #245269;
+ color:white;
 }
 .chat .chat-history .me-message {
  background: #f8f8f8;
- color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; font-size: 16px; line-height: 26px;
- font-weight: lighter;
+ color: #245269;
+
 }
 .chat .chat-history .me-message:after {
- border-color: red transparent;
+ border-color: #f8f8f8 transparent;
    right: 20px;
    top: -15px;
    left: auto;
@@ -95,9 +91,31 @@ content: "";
  height: 0;
 }
 .you {
- color: blue;
+ color: #f8f8f8
 }
 
 .me {
- color: red;
+ color: #245269;
+}
+
+.botindex {
+  background-color: #f0f2f2;
+  border-radius: 20px
+}
+
+input#speech {
+  width: 60%;
+  border: none;
+  border-bottom: solid 1px #245269;
+  background-color: #f0f2f2;
+  font-weight:normal;
+  font-color: #f8f8f8;
+
+
+}
+input#speech.focus {
+  outline:none !important;
+}
+::-webkit-input-placeholder {
+  color: #245269
 }

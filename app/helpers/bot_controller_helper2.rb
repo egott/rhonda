@@ -95,10 +95,6 @@ module BotControllerHelper2
     return last_arr
   end
 
-  def get_weather
-    response = Weather.lookup_by_location('New York, NY', Weather::Units::FAHRENHEIT)
-    p response
-  end
 
   def get_marvel
     @client = Marvel::Client.new
@@ -110,11 +106,6 @@ module BotControllerHelper2
     p response
   end
 
-  def get_tv(show)
-    total_episode = []
-    tvdb = Tvdbr::Client.new('BFEEF9792B1697DF')
-    episode = tvdb.find_all_series_by_title(show)
-    "#{episode[0].series_name}: #{episode[0].overview}."
-  end
+
 
 end

@@ -1,10 +1,8 @@
 module Response
   extend self
-  require 'net/http'
-  require 'json'
-  require 'uri'
 
-  def api_distr(response)
+  def api_distr(response, user)
+
     case response[:result][:action]
     when "getRecipe"
       @ingredient = response[:result][:parameters][:food]
@@ -22,6 +20,27 @@ module Response
       GiphApi.get_giph(@subject)
     when "nextGiph"
       GiphApi.get_giph(@subject)
+    when "getRun"
+      #need to fix with free time
+      Run.get_run
+    when "getWeather"
+      #not working
+      WeatherApi.get_weather
+    when "getTv"
+      @show = response[:result][:parameters][:show]
+      TvApi.get_tv(@show)
+    when "setEvent"
+      title = response[:result][:parameters][:eventtitle]
+      if title == ""
+        title = "event"
+      end
+      location = response[:result][:parameters][:eventlocation]
+      day = response[:result][:parameters][:eventstart]
+      starttime = response[:result][:parameters][:eventtime].join.split[0..1]
+      endtime = response[:result][:parameters][:eventtime].join.split[-2..-1]
+      SetEvent.set_event(title, location, day, starttime, endtime, user)
+    when "setEventfulEvent"
+      EventfulEvent.set_eventful(user)
     end
 
   end

@@ -96,6 +96,10 @@ class BotController < ApplicationController
       response = {
         'speech': "#{set_run(time)}"
       }
+    elsif response[:result][:action] == 'getMovieTickets'
+      response = {
+        'speech': "#{get_movie_theaters}"
+      }
     else
         response = response[:result][:fulfillment]
     end

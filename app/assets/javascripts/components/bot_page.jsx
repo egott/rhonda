@@ -15,6 +15,7 @@ class BotPage extends React.Component{
       link: [""].concat(this.state.link),
       gif: [""].concat(this.state.gif)
     })
+
   }
   newRespond(answer,link){
     this.setState({
@@ -30,10 +31,10 @@ class BotPage extends React.Component{
   }
   render() {
     return(
-      <div>
+      <div className="botpage">
         {this.state.answer.map( (answer, i) =>
           <div>
-            <div>
+            <div className= "conversation">
               <Question reply={this.state.reply[i]} key={i+100}/>
               <br/><br/><br/><br/>
               <Answer answer={this.state.answer[i]} link={this.state.link[i]} gif={this.state.gif[i]} key={i}/>

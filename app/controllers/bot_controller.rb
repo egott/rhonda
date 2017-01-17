@@ -103,7 +103,8 @@ class BotController < ApplicationController
     elsif response[:result][:action] == 'getMarvel'
       character = response[:result][:parameters][:character]
       response = {
-        'speech': "#{get_marvel(character)}"
+        'speech': "#{get_marvel(character)}",
+        'url': $url
       }
     else
         response = response[:result][:fulfillment]

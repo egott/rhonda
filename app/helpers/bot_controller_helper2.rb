@@ -14,7 +14,7 @@ module BotControllerHelper2
                               :parameters => {'calendarId' => 'primary', 'sendNotifications' => true, timeMin: start_date, timeMax:end_date },
                               :headers => {'Content-Type' => 'application/json'}
                               )
-  
+
     free_time = calculate_freetime(calendars)
     last_arr = group_open_times(free_time)
     $last_arr = last_arr
@@ -96,9 +96,13 @@ module BotControllerHelper2
   end
 
   def get_weather(location)
+
     response = Weather.lookup_by_location(location, Weather::Units::FAHRENHEIT)
-    response.forecasts.select! {|day| day.date.strftime("%Y-%m-%d") == Time.now.strftime("%Y-%m-%d")}
-      debugger
+    response.forecasts.each do |day|
+      if day.date.strftime("%Y-%m-%d") == Time.now.strftime("%Y-%m-%d")
+        return "Todays Weather is high:#{day.high}, low: #{day.low}; #{day.text}"
+      end
+    end
 
 
   end
@@ -110,7 +114,8 @@ module BotControllerHelper2
       config.private_key = '3e199647d1dc793120dc16a07e3c308ef2cfadb4'
     end
     response = @client.characters(nameStartsWith: character, orderBy: 'modified')
-    response
+    $url = response.data.results[0].urls[0].url
+    description = response.data.results[0].description
   end
 
   def get_tv(show)

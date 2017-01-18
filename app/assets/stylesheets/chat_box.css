@@ -50,6 +50,11 @@ content: "";
  color: #245269;
 
 }
+img {
+    vertical-align: middle;
+    max-width: 100%
+}
+
 .chat .chat-history .me-message:after {
  border-color: #f8f8f8 transparent;
    right: 20px;
@@ -118,4 +123,23 @@ input#speech.focus {
 }
 ::-webkit-input-placeholder {
   color: #245269
+}
+.nav {
+  display: inline;
+}
+
+#mainNav {
+  background-color: #245269;
+  height: 20px;
+}
+
+
+#mainNav li a{
+  color: white;
+  padding: 4px;
+  padding-right: 8px;
+
+}
+#mainNav li a:hover {
+  color: #18BC9C;
 }

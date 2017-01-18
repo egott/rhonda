@@ -9,7 +9,6 @@ class Bot extends React.Component {
       }
     })
     .done(function(response){
-      debugger
       bot_response = response.speech
       if ('url' in response == true) {
         link = response.url

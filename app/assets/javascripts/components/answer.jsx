@@ -19,7 +19,7 @@ class Answer extends React.Component {
             <span className="message-data-name"><i className="fa fa-circle you"></i> Rhonda</span>
           </div>
           <div className="message you-message">
-            <img src={this.props.gif} />
+            <img class="img-size" src={this.props.gif} />
           </div>
         </div>
       )

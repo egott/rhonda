@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 #Commands
-Things Rhonda can do
+Things Rhonda can do:
 * Calculate your daily free time based on your Google Calendar
  * ex: Do I have any free time today?
 * Get a healthy recipe based on an ingredient.
@@ -35,4 +35,28 @@ Things Rhonda can do
  * ex: Next event
 * Set this event in your calendar.
  * ex: Set this event.
+* Get a funny giph based on your preferences.
+ * ex: Show me a cat giph.
+ * ex: Next giph.
+* Send the giph to a phone number
+ * ex: Send this giph to ...., only verified phone numbers for now...
+* Get a run based on your free time of the day (do get free time first)
+ * Give me a run.
+ * next run: I'm too lazy for this run.
+* Set this run in your calendar
+ * ex: I'll do this run at 8 pm.
+* Get the weather in a certain area.
+ * ex: What's the weather in New York today.
+* Get info about a show.
+ * ex: What's dexter about?
+* Set a TV show in your calendar if it is still airing.
+ * ex: I'll watch this show at 8 pm.
+* Get info about a Marvel character.
+ * ex: I would like to know more about Wolverine.
+* Get info about a Meetup about a certain Category in your area.
+ * ex: Can I get a Meetup about Health for today in New York.
+ * ex: Next meetup
+
+
+
 

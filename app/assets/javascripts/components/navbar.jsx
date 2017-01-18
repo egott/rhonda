@@ -13,7 +13,7 @@ class NavBar extends React.Component {
                         <a href="/">home</a>
                     </li>
                     <li>
-                        <a href="/">documentation</a>
+                        <a href="https://github.com/egott/rhonda/blob/master/README.md" target="_hidden" >documentation</a>
                     </li>
                 </ul>
             </div>

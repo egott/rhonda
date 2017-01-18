@@ -48,7 +48,7 @@ module Response
     when "getFreetime"
       GoogleCalendarApi.get_freetime(user)
     when "sendGiph"
-      TwilioApi.sendGiph
+      GiphApi.sendGiph
     when "getMarvel"
       character = response[:result][:parameters][:character]
       MarvelApi.get_marvel(character)

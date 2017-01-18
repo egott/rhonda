@@ -13,7 +13,7 @@ class Answer extends React.Component {
           </div>
           <div className="message you-message">
             {this.props.answer} <p> </p>
-            <a href={this.props.link}> More info.</a>
+            <a href={this.props.link} target="_blank"> More info.</a>
           </div>
         </div>
       )

@@ -14,6 +14,8 @@ gem 'rails', '~> 5.0.1'
 gem 'react-rails'
 
 gem 'pry-rails', :group => :development
+gem 'twilio-ruby', '~> 4.11.1'
+
 
 
 # Use postgresql as the database for Active Record

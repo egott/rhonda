@@ -12,7 +12,7 @@ module RecipeApi
     time = recipe.time_to_cook.to_i + recipe.time_to_prepare.to_i
     recipe_link = recipe.source_url
 
-    output = ["My suggestion would be #{name}, it takes #{time} minutes to cook. Say next if you want another recipe.", "I found this great recipe: #{name}, if you have #{time} minutes to spare. Doesn't please you? just type next."]
+    output = ["My suggestion would be #{name}, it takes #{time} minutes to cook. Say next recipe if you want another recipe.", "I found this great recipe: #{name}, if you have #{time} minutes to spare. Doesn't please you? just type next recipe."]
     Messagizer.messagize(output.sample, recipe_link, '')
   end
 end

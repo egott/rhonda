@@ -9,20 +9,10 @@ class Bot extends React.Component {
       }
     })
     .done(function(response){
-      debugger
       bot_response = response.speech
-      if ('url' in response == true) {
-        link = response.url
-        gif = ""
-      } else if ('gif' in response == true) {
-        gif = response.gif
-        link = ""
-      }
-      else {
-        link = "",
-        gif = ""
-      }
-      this.props.onNewRespond(bot_response, link, gif)
+      link = response.url
+      giph = response.giph
+      this.props.onNewRespond(bot_response, link, giph)
       this.props.onNewQuestion(form_input)
     }.bind(this))
   }

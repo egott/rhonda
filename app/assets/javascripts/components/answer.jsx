@@ -12,14 +12,14 @@ class Answer extends React.Component {
           </div>
         </div>
       )
-    } else if (this.props.gif.length > 0) {
+    } else if (this.props.giph.length > 0) {
       return(
         <div>
           <div className="message-data ">
             <span className="message-data-name"><i className="fa fa-circle you"></i> Rhonda</span>
           </div>
           <div className="message you-message">
-            <img src={this.props.gif} />
+            <img src={this.props.giph} />
           </div>
         </div>
       )

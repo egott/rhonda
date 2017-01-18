@@ -7,7 +7,8 @@ module EventfulApi
     results = eventful.call 'events/search',
       :keywords => subject,
       :location => location,
-      :page_size => 5
+      :page_size => 30
+
     @event = results.first[1]['event'].sample
     url = @event['venue_url']
 

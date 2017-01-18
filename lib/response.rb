@@ -59,6 +59,12 @@ module Response
     when "setTV"
       time = response [:result][:parameters][:time]
       TvApi.set_tv(time, user)
+    when "getMeetup"
+      @category = response[:result][:parameters][:meetupcategories]
+      @location = response[:result][:parameters][:location]
+      MeetUpApi.get_meetup(@category,@location)
+    when "nextMeetup"
+      MeetUpApi.get_meetup(@category,@location)
     end
 
   end

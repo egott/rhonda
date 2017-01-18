@@ -1,6 +1,9 @@
 class Bot extends React.Component {
-  handleClick() {
+  handleSubmit(e) {
+    e.preventDefault()
     const form_input = this.refs.textBox.value
+
+    this.refs.textBox.value = ''
     $.ajax({
       type: "POST",
       url: "/bot",
@@ -20,12 +23,11 @@ class Bot extends React.Component {
     return(
       <div>
         <div className="container">
-          {/* <form onSubmit={this.handleSubmit.bind(this)}> */}
+          <form onSubmit={this.handleSubmit.bind(this)}>
             <input id="speech" type="text" ref= "textBox" placeholder="Start typing..."/>
-            {/* <input type="submit" /> */}
-          {/* </form> */}
+          </form>
           <br/><br/>
-          <button id="rec" className="btn" onClick={this.handleClick.bind(this)}>Ask</button>
+
           <div id="spokenResponse" className="spoken-response">
           <div className="spoken-response__text"></div>
           </div>

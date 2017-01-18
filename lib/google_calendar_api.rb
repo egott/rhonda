@@ -42,17 +42,24 @@ module GoogleCalendarApi
 
     free_time = calculate_freetime(calendars)
     last_arr = group_open_times(free_time)
-    last_arr = last_arr
     totalstring = ""
+    #transition from european system to AM and PM
     last_arr.each do |list_times|
-
       if list_times[:hour_start] > 12
         list_times[:hour_start] = "#{list_times[:hour_start]- 12} pm"
       elsif
         list_times[:hour_start] = "#{list_times[:hour_start]} am"
       end
-      stringsoffreetime = "You have #{list_times[:hours_available]} hours of free time today starting at #{list_times[:hour_start]} untill #{list_times[:hour_start][-4..-1].to_i + list_times[:hours_available]} #{list_times[:hour_start][-2..-1]}. "
-      totalstring = totalstring + stringsoffreetime
+
+      free_time_until = ''
+      if list_times[:hour_start][0..-4].to_i < 12 && (list_times[:hour_start][0..-4].to_i + list_times[:hours_available] > 12)
+        free_time_untill = "#{(list_times[:hour_start][0..-4].to_i + list_times[:hours_available]) - 12} pm"
+      else
+        free_time_untill = "#{(list_times[:hour_start][0..-4].to_i + list_times[:hours_available])} pm"
+      end
+
+      stringsoffreetime = "You have #{list_times[:hours_available]} hours of free time starting at #{list_times[:hour_start]} untill #{free_time_untill}."
+      totalstring += stringsoffreetime
     end
     Messagizer.messagize("Here are your free times for today: #{totalstring}",'','')
   end

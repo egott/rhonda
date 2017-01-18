@@ -2,7 +2,6 @@ module Response
   extend self
 
   def api_distr(response, user)
-
     case response[:result][:action]
     when "getRecipe"
       @ingredient = response[:result][:parameters][:food]
@@ -49,7 +48,7 @@ module Response
     when "getFreetime"
       GoogleCalendarApi.get_freetime(user)
     when "sendGiph"
-      #see picture in my phone
+      GiphApi.sendGiph
     when "getMarvel"
       character = response[:result][:parameters][:character]
       MarvelApi.get_marvel(character)
@@ -57,7 +56,7 @@ module Response
       show = response[:result][:parameters][:show]
       TvApi.get_tv(show)
     when "setTV"
-      time = response [:result][:parameters][:time]
+      time = response[:result][:parameters][:time]
       TvApi.set_tv(time, user)
     when "getMeetup"
       @category = response[:result][:parameters][:meetupcategories]
@@ -65,6 +64,9 @@ module Response
       MeetUpApi.get_meetup(@category,@location)
     when "nextMeetup"
       MeetUpApi.get_meetup(@category,@location)
+    else
+      Messagizer.messagize(response[:result][:fulfillment][:speech], '', '')
+
     end
 
   end

@@ -13,7 +13,7 @@ class Answer extends React.Component {
           </div>
           <div className="message you-message">
             {this.props.answer} <p> </p>
-            <a href={this.props.link}> More info.</a>
+            <a href={this.props.link} target="_blank"> More info.</a>
           </div>
         </div>
       )
@@ -23,7 +23,7 @@ class Answer extends React.Component {
           <div className="message-data ">
             <span className="message-data-name"><i className="fa fa-circle you"></i> Rhonda</span>
           </div>
-          <div className="message you-message col-md-4">
+          <div className="message you-message">
             <img src={this.props.giph} />
           </div>
         </div>

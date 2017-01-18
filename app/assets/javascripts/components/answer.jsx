@@ -1,4 +1,9 @@
 class Answer extends React.Component {
+  componentDidMount() {
+    $('html, body').animate({
+      scrollTop: $('.clearfix').offset().top
+    }, 'slow');
+  }
   render() {
     if (this.props.link.length > 0) {
       return(

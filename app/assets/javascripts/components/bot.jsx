@@ -17,7 +17,6 @@ class Bot extends React.Component {
       giph = response.giph
       this.props.onNewRespond(bot_response, link, giph)
       this.props.onNewQuestion(form_input)
-
     }.bind(this))
   }
   render() {

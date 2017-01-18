@@ -10,7 +10,6 @@ module MarvelApi
     response = @client.characters(nameStartsWith: character, orderBy: 'modified')
     @url = response.data.results[0].urls[0].url
     description = response.data.results[0].description
-    debugger
   end
 
 end

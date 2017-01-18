@@ -134,6 +134,7 @@ GEM
       faraday
       faraday_middleware
       hashie
+    meetup_client (0.1.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -311,6 +312,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   marvel_api
+  meetup_client
   omniauth-google-oauth2
   pg (~> 0.18)
   pry-rails

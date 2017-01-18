@@ -100,6 +100,10 @@ class BotController < ApplicationController
       response = {
         'speech': "#{get_movie_theaters}"
       }
+    elsif response[:result][:action] == 'getMeetup'
+      response = {
+        'speech': "#{get_meetup}"
+      }
     else
         response = response[:result][:fulfillment]
     end

@@ -117,4 +117,21 @@ module BotControllerHelper2
     "#{episode[0].series_name}: #{episode[0].overview}."
   end
 
+  def get_meetup
+
+   params = { category: '1',
+      city: 'New York',
+      country: 'USA',
+      status: 'upcoming',
+      format: 'json',
+      page: '50'}
+    meetup_api = MeetupApi.new
+    events = meetup_api.open_events(params)
+      events["results"].each  do |event|
+        
+        event["time"]
+        debugger
+      end
+  end
+
 end

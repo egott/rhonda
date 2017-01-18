@@ -49,6 +49,7 @@ gem 'google_calendar'
 gem 'weather-api'
 gem 'marvel_api'
 gem 'tvdbr'
+gem 'meetup_client'
 
 
 # Use Capistrano for deployment

@@ -27,3 +27,12 @@ Things you may want to cover:
 Things Rhonda can do
 * Calculate your daily free time based on your Google Calendar
  * ex: Do I have any free time today?
+* Get a healthy recipe based on an ingredient.
+ * ex: I want to cook chicken.
+ * ex: Next recipe.
+* Get an genre specified event in your neighbourhood.
+ * ex: I want to go to a concert in NYC.
+ * ex: Next event
+* Set this event in your calendar.
+ * ex: Set this event.
+

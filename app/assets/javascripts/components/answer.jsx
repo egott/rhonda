@@ -23,7 +23,7 @@ class Answer extends React.Component {
           <div className="message-data ">
             <span className="message-data-name"><i className="fa fa-circle you"></i> Rhonda</span>
           </div>
-          <div className="message you-message">
+          <div className="message you-message col-md-4">
             <img src={this.props.giph} />
           </div>
         </div>

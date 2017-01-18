@@ -135,5 +135,17 @@ module BotControllerHelper
 
     "I just set a #{$run.distance} miles run at in your Calendar from #{start_date} untill #{end_date}"
   end
+
+  def send_giph
+    twilio_number = '+16316511737'
+    client = Twilio::REST::Client.new 'AC2edfac24f7c250a522984c5ef814d04e', 'f7edb8354ee637670455902e8b4f1e8b'
+    client.account.messages.create({
+    :from => twilio_number,
+    :to => '+18608787256',
+    :body => 'RhondaBot sent you a Giph',
+    :media_url => 'https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg'
+    })
   
+  end
+
 end

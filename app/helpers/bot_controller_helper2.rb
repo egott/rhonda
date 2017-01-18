@@ -117,4 +117,5 @@ module BotControllerHelper2
     "#{episode[0].series_name}: #{episode[0].overview}."
   end
 
+
 end

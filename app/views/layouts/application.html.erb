@@ -8,27 +8,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-
-    <div>
-      <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-          <div class="container topnav">
-              <div class="navbar-header">
-                  <a class="navbar-brand topnav">Rhonda Bot</a>
-              </div>
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <% if current_user %>
-                  <li><a href=""><%= current_user.name %></a></li>
-                      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-                  <% else %>
-                      <li><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></li>
-                  <% end %>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-    </div>
+  <body id="page-top" class="index">
 
     <div>
       <%= yield %>

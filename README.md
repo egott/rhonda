@@ -27,6 +27,8 @@ Things you may want to cover:
 Things Rhonda can do:
 * Calculate your daily free time based on your Google Calendar
  * ex: Do I have any free time today?
+* Set a meeting in a location between a certain timeperiod
+ * I'm having a meeting tomorrow at 5 pm untill 6 pm at Dev Bootcamp.
 * Get a healthy recipe based on an ingredient.
  * ex: I want to cook chicken.
  * ex: Next recipe.

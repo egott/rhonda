@@ -70,7 +70,7 @@ module RunApi
                           :body => JSON.dump(@event),
                           :headers => {'Content-Type' => 'application/json'})
 
-    output = "I just set a #{@run.distance} miles run at in your Calendar from #{start_date} untill #{end_date}"
+    output = "I just set a #{@run.distance} miles run at in your Calendar from #{start_date.strftime("%A %B %e, %Y at %l:%M %P")} untill #{end_date.strftime("%A %B %e, %Y at %l:%M %P")}"
 
     Messagizer.messagize(output, '', '')
   end

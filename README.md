@@ -26,4 +26,4 @@ Things you may want to cover:
 #Commands
 Things Rhonda can do
 * Calculate your daily free time based on your Google Calendar
-** ex: Do I have any free time today?
+ * ex: Do I have any free time today?

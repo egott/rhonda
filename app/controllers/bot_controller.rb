@@ -7,15 +7,8 @@ class BotController < ApplicationController
 
   def get_response
     ai_response = $rhonda.text_request params["user_input"]
+
      response = Response.api_distr(ai_response, current_user)
-
-
-
-    # elsif response[:result][:action] == "getFreetime"
-    #   response =
-    #       {
-    #         "speech": "#{get_freetime}"
-    #       }
 
 
     # elsif response[:result][:action] == 'setRun'
@@ -23,10 +16,9 @@ class BotController < ApplicationController
     #   response = {
     #     'speech': "#{set_run(time)}"
     #   }
-  
+
     #     response = response[:result][:fulfillment]
     # end
-
       render json: response
   end
 

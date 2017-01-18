@@ -1,9 +1,18 @@
 module WeatherApi
   extend self
 
-  def get_weather
-    output = Weather.lookup_by_location('New York, NY', Weather::Units::FAHRENHEIT)
-    Messagizer.messagize(output, '', '')
+  def get_weather(location)
+
+    response = Weather.lookup_by_location(location, Weather::Units::FAHRENHEIT)
+
+    response.forecasts.each do |day|
+      if day.date.strftime("%Y-%m-%d") == Time.now.strftime("%Y-%m-%d")
+        @output = "Todays high:#{day.high}, low: #{day.low}; #{day.text}"
+      else
+        @output = "no output"
+      end
+    end
+    Messagizer.messagize(@output, '', '')
   end
 
 end

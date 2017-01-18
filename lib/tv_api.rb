@@ -25,8 +25,9 @@ module TvApi
     @event = {
       'summary' => "#{@episode[0].series_name}",
       'start' => { 'dateTime' => get_next_airdate.iso8601 },
-      'end' => {'dateTime' => (get_next_airdate + (@episode[0].runtime).to_i.minutes).iso8601}
+      'end' => {'dateTime' => (get_next_airdate + @episode[0].runtime.to_i.minutes).iso8601}
     }
+
     #fix 400 request
     client = Google::APIClient.new
     client.authorization.access_token = user.oauth_token
@@ -34,7 +35,7 @@ module TvApi
 
     @set_event = client.execute(:api_method => service.events.insert,
                           :parameters => {'calendarId' => 'primary', 'sendNotifications' => true},
-                          :body => JSON.dump(@event_cal),
+                          :body => JSON.dump(@event),
                           :headers => {'Content-Type' => 'application/json'})
     output = "I just set the show #{@episode[0].series_name} in your calendar for next #{@episode[0].airs_day_of_week} at #{@episode[0].airs_time}"
 

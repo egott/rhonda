@@ -24,7 +24,7 @@ module Response
       GiphApi.get_giph(@subject)
     when "getRun"
       #need to fix with free time
-      RunApi.get_run
+      RunApi.get_run(user)
     when "nextRun"
       RunApi.next_run
     when "setRun"

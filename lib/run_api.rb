@@ -1,9 +1,24 @@
 module RunApi
   extend self
 
-  def get_run
+  def get_run(user)
+    Time.zone = 'EST'
+    start_date = Time.now.iso8601
+    end_date = (Time.now.end_of_day).iso8601
+
+    client = Google::APIClient.new
+    client.authorization.access_token = user.oauth_token
+    service = client.discovered_api('calendar', 'v3')
+
+    calendars = client.execute(api_method: service.events.list,
+                              :parameters => {'calendarId' => 'primary', 'sendNotifications' => true, timeMin: start_date, timeMax:end_date },
+                              :headers => {'Content-Type' => 'application/json'}
+                              )
+    free_time = GoogleCalendarApi.calculate_freetime(calendars)
+    last_arr = GoogleCalendarApi.group_open_times(free_time)
+
     max_free_time = 0
-    $last_arr.each do |answer|
+    last_arr.each do |answer|
       if answer[:hours_available] > max_free_time
         max_free_time = answer[:hours_available]
       end

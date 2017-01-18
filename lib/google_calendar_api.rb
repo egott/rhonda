@@ -42,7 +42,7 @@ module GoogleCalendarApi
 
     free_time = calculate_freetime(calendars)
     last_arr = group_open_times(free_time)
-    $last_arr = last_arr
+    last_arr = last_arr
     totalstring = ""
     last_arr.each do |list_times|
 

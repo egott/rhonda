@@ -3,8 +3,7 @@ module RecipeApi
 
   def get_recipe(ingredient)
     recipes = Recipe.all
-
-    recipes = recipes.select { |recipe| recipe.ingredient_name.include? ingredient}
+    recipes = recipes.select { |recipe| recipe.ingredient_name.include? ingredient.join}
     recipe = recipes.sample
     name = recipe.name
     ingredient = recipe.ingredient_name

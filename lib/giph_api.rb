@@ -23,12 +23,14 @@ module GiphApi
     begin
       @client = Twilio::REST::Client.new account_sid, auth_token
       message = @client.account.messages.create(:body => "Look at this fun giph 😀",
-        :to => "19293417134",
+        :to => "+17183448481",
         :from => "+16316511737",
         :media_url => @giph
         )
+
     rescue Twilio::REST::RequestError => e
       puts e.message
+
     end
     output = "I just sent this cool giph to Emily"
     Messagizer.messagize(output, '', '')

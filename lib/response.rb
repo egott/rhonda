@@ -1,5 +1,6 @@
 module Response
   extend self
+  require 'marvel_api'
 
   def api_distr(response, user)
     case response[:result][:action]

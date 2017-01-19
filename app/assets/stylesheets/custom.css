@@ -65,7 +65,7 @@ hr.star-primary:after {
 header {
   text-align: center;
   /*background: #2C3E50;*/
-  background: pink;
+  background: lightBlue;
   color: white;
 }
 .name {
@@ -98,11 +98,14 @@ header .intro-text .skills {
     font-size: 1.75em;
   }
 }
-
+.rhondainfo-container {
+  margin-top: 50px
+}
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0;
-  /*border: 2px solid black;*/
+  border: 1px solid lightBlue;
+  border-radius: 10px;
   font-weight: 200;
   font-size: 1.5em;
 }
@@ -290,7 +293,7 @@ fieldset[disabled] .btn-success.active {
   /*display: inline-block;*/
   height: 40px;
   width: 200px;
-  border: 1px solid pink;
+  border: 1px solid white;
   border-radius: 4px;
 }
 .footer-wording {

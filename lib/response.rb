@@ -33,9 +33,6 @@ module Response
     when "getWeather"
       location = response[:result][:parameters][:location]
       WeatherApi.get_weather(location)
-    when "getTv"
-      @show = response[:result][:parameters][:show]
-      TvApi.get_tv(@show)
     when "setEvent"
       title = response[:result][:parameters][:eventtitle]
       if title == ""

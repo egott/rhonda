@@ -32,7 +32,7 @@ module GiphApi
       puts e.message
 
     end
-    output = "I just sent this cool giph to Emily"
+    output = "I just sent this cool giph to Gibral"
     Messagizer.messagize(output, '', '')
   end
 

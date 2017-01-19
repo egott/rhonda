@@ -47,7 +47,7 @@ module RunApi
     fun_fact = @run.fun_fact_about_calories
     distance = @run.distance
 
-    output = ["You lazy slob, run #{distance} miles for #{duration} minutes. You could burn #{calories} calories! If you do that, then #{fun_fact}", "Hmm fatass, how about a #{distance} mile run that burns around #{calories} calories for #{duration} minutes!" ]
+    output = ["You lazy slob, run #{distance} miles for #{duration} minutes. You could burn #{calories} calories! If you do that, then #{fun_fact}", "Wow, being lazy today huh? How about a #{distance} mile run that burns around #{calories} calories for #{duration} minutes!" ]
 
     Messagizer.messagize(output.sample, '', '')
   end

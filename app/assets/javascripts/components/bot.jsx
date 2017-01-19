@@ -24,7 +24,7 @@ class Bot extends React.Component {
       <div>
         <div className="container">
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <input id="speech" type="text" ref= "textBox" placeholder="Start typing..."/>
+            <input id="speech" type="text" ref= "textBox" placeholder="Start typing..." autocomplete="off"/>
           </form>
           <br/><br/>
 

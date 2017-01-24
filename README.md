@@ -5,7 +5,7 @@ Table of Contents
 - [APIs](#APIs)
 - [Commands](#Commands)
 
-##Team Members
+## Team Members
 
 Name | GitHub | LinkedIn |
 --- |---| ---
@@ -14,7 +14,7 @@ Gibral Raphael | [GitHub](https://github.com/graphael7) | [LinkedIn](https://www
 Emily Gottlieb | [GitHub](https://github.com/egott) | [LinkedIn](https://www.linkedin.com/in/emily-gottlieb) |
 Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.linkedin.com/in/nadav-appel) | 
 
-##APIs
+## APIs
 
 1.  [ApiAi](https://api.ai)
 
@@ -41,7 +41,7 @@ Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.link
 
 
 
-##Commands
+## Commands
 Things Rhonda can do:
 * Calculate your daily free time based on your Google Calendar
  * ex: Do I have any free time today?

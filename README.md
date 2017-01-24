@@ -12,6 +12,7 @@ Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.link
 
 #APIs
 APIs used in this Project:
+
 1.  [ApiAi](https://api.ai)
 
 2.  [Eventful](http://api.eventful.com)
@@ -20,7 +21,7 @@ APIs used in this Project:
 
 4.  [Google Authentication](https://developers.google.com/identity/protocols/OAuth2)
 
-5.  [Marvel](hhttps://developer.marvel.com)
+5.  [Marvel](https://developer.marvel.com)
 
 6.  [Meetup](https://www.meetup.com/meetup_api)
 

@@ -1,27 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Team Members
+Members of this team:
+1. Felix Vandelanotte[GitHub](https://github.com/felixvdl)[LinkedIn](https://be.linkedin.com/in/felix-vandelanotte-26620498) - Team Lead
+2. Gibral Raphael[GitHub](https://github.com/graphael7)[LinkedIn](https://www.linkedin.com/in/gibralraphael/)
+3. Emily Gottlieb[GitHub](https://github.com/egott)[LinkedIn](https://www.linkedin.com/in/emily-gottlieb)
+4. Nadav Appel[GitHub](https://github.com/nadavP3)[LinkedIn](https://www.linkedin.com/in/nadav-appel)
 
-Things you may want to cover:
 
-* Ruby version
+#APIs
+APIs used in this Project:
+1. [ApiAi](https://api.ai)
+2. [Eventful](http://api.eventful.com)
+3. [Google Calendar](https://developers.google.com/google-apps/calendar)
+4. [Google Authentication](https://developers.google.com/identity/protocols/OAuth2)
+5. [Marvel](hhttps://developer.marvel.com)
+6. [Meetup](https://www.meetup.com/meetup_api)
+7. [Twilio](https://www.twilio.com/docs/api)
+8. [Spoonacular](https://spoonacular.com/food-api)
+9. [GIPHY](https://api.giphy.com)
+10. [TVDB](https://api.thetvdb.com/swagger)
+11. [Yahoo Weather](https://developer.yahoo.com/weather)
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 #Commands
 Things Rhonda can do:

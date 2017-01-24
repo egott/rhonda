@@ -2,10 +2,12 @@
 A helpful AI virtual assistant that is connected to 11 APIs which allows the user to find and create calendar events, get recommendations for activities, meetups, movies, recipes and even funny cat gifs.
 
 
+
 ##Table of Contents
 - [Team Members](#team_members)
 - [APIs](#apis)
 - [Commands](#commands)
+
 
 
 ## Team_Members
@@ -16,6 +18,7 @@ Felix Vandelanotte - Leader| [GitHub](https://github.com/felixvdl) | [LinkedIn](
 Gibral Raphael | [GitHub](https://github.com/graphael7) | [LinkedIn](https://www.linkedin.com/in/gibralraphael/) |
 Emily Gottlieb | [GitHub](https://github.com/egott) | [LinkedIn](https://www.linkedin.com/in/emily-gottlieb) |
 Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.linkedin.com/in/nadav-appel) | 
+
 
 
 ## APIs
@@ -41,6 +44,7 @@ Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.link
 10.  [TVDB](https://api.thetvdb.com/swagger)
 
 11.  [Yahoo Weather](https://developer.yahoo.com/weather)
+
 
 
 ## Commands

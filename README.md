@@ -1,7 +1,6 @@
 # README
 
 #Team Members
-Members of this team:
 
 Name | GitHub | LinkedIn |
 --- |---| ---
@@ -11,7 +10,6 @@ Emily Gottlieb | [GitHub](https://github.com/egott) | [LinkedIn](https://www.lin
 Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.linkedin.com/in/nadav-appel) | 
 
 #APIs
-APIs used in this Project:
 
 1.  [ApiAi](https://api.ai)
 
@@ -73,7 +71,3 @@ Things Rhonda can do:
 * Get info about a Meetup about a certain Category in your area.
  * ex: Can I get a Meetup about Health for today in New York.
  * ex: Next meetup
-
-
-
-

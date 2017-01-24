@@ -13,16 +13,27 @@ Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.link
 #APIs
 APIs used in this Project:
 1.  [ApiAi](https://api.ai)
+
 2.  [Eventful](http://api.eventful.com)
+
 3.  [Google Calendar](https://developers.google.com/google-apps/calendar)
+
 4.  [Google Authentication](https://developers.google.com/identity/protocols/OAuth2)
+
 5.  [Marvel](hhttps://developer.marvel.com)
+
 6.  [Meetup](https://www.meetup.com/meetup_api)
+
 7.  [Twilio](https://www.twilio.com/docs/api)
+
 8.  [Spoonacular](https://spoonacular.com/food-api)
+
 9.  [GIPHY](https://api.giphy.com)
+
 10.  [TVDB](https://api.thetvdb.com/swagger)
+
 11.  [Yahoo Weather](https://developer.yahoo.com/weather)
+
 
 
 

@@ -5,7 +5,7 @@ Members of this team:
 
 Name | GitHub | LinkedIn |
 --- |---| ---
-Felix Vandelanotte| (https://github.com/felixvdl)[LinkedIn] | [GitHub](https://be.linkedin.com/in/felix-vandelanotte-26620498) |   - Team Lead
+Felix Vandelanotte| [GitHub](https://github.com/felixvdl) | [LinkedIn](https://be.linkedin.com/in/felix-vandelanotte-26620498) | - Team Lead
 Gibral Raphael | [GitHub](https://github.com/graphael7) | [LinkedIn](https://www.linkedin.com/in/gibralraphael/) |
 Emily Gottlieb | [GitHub](https://github.com/egott) | [LinkedIn](https://www.linkedin.com/in/emily-gottlieb) |
 Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.linkedin.com/in/nadav-appel) | 

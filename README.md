@@ -1,12 +1,12 @@
 # README
 
 Table of Contents
-- [Team Members](#Team_Members)
-- [APIs](#APIs)
-- [Commands](#Commands)
+- [Team Members](#team members)
+- [APIs](#apis)
+- [Commands](#commands)
 
 
-## Team_Members
+## Team Members
 
 Name | GitHub | LinkedIn |
 --- |---| ---

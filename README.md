@@ -1,11 +1,12 @@
 # README
 
 Table of Contents
-- [Team Members](#Team Members)
+- [Team Members](#Team_Members)
 - [APIs](#APIs)
 - [Commands](#Commands)
 
-## Team Members
+
+## Team_Members
 
 Name | GitHub | LinkedIn |
 --- |---| ---
@@ -13,6 +14,7 @@ Felix Vandelanotte - Leader| [GitHub](https://github.com/felixvdl) | [LinkedIn](
 Gibral Raphael | [GitHub](https://github.com/graphael7) | [LinkedIn](https://www.linkedin.com/in/gibralraphael/) |
 Emily Gottlieb | [GitHub](https://github.com/egott) | [LinkedIn](https://www.linkedin.com/in/emily-gottlieb) |
 Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.linkedin.com/in/nadav-appel) | 
+
 
 ## APIs
 
@@ -37,8 +39,6 @@ Nadav Appel | [GitHub](https://github.com/nadavP3) | [LinkedIn](https://www.link
 10.  [TVDB](https://api.thetvdb.com/swagger)
 
 11.  [Yahoo Weather](https://developer.yahoo.com/weather)
-
-
 
 
 ## Commands

@@ -1,8 +1,9 @@
 # [Rhonda Bot](https://hello-rhonda.herokuapp.com)
 A helpful AI virtual assistant that is connected to 11 APIs which allows the user to find and create calendar events, get recommendations for activities, meetups, movies, recipes and even funny cat gifs.
 
-![Front Page gif](front_page.gif)
-
+[![Front Page gif](front_page.gif)](https://hello-rhonda.herokuapp.com)
+<br>
+YouTube demo:
 [![Rhonda Bot YouTube](rhondabotYT.png)](https://www.youtube.com/watch?v=q4iEmPYGavU?t=0 "Rhonda Bot")
 
 

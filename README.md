@@ -3,7 +3,7 @@ A helpful AI virtual assistant that is connected to 11 APIs which allows the use
 
 [![Front Page gif](front_page.gif)](https://hello-rhonda.herokuapp.com)
 <br>
-YouTube demo:
+YouTube demo:<br>
 [![Rhonda Bot YouTube](rhondabotYT.png)](https://www.youtube.com/watch?v=q4iEmPYGavU?t=0 "Rhonda Bot")
 
 
